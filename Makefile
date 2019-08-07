@@ -6,7 +6,7 @@
 #    By: csinglet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/22 18:59:57 by csinglet          #+#    #+#              #
-#    Updated: 2019/07/28 01:06:17 by nwhitlow         ###   ########.fr        #
+#    Updated: 2019/07/28 23:10:30 by nwhitlow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ FILES		= main.cpp \
 			  TerminalDisplay.cpp \
 			  DateTimeModule.cpp \
 			  WhoModule.cpp \
+			  SystemInfo.cpp SystemInfoModule.cpp \
 			  TestModule.cpp \
+			  GameOfLifeModule.cpp \
 			  FrameClock.cpp time_util.cpp
 
 # FRAMEWORKS	= -framework OpenGL -framework GLUT

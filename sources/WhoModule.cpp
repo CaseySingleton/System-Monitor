@@ -27,6 +27,11 @@ void WhoModule::draw(const TerminalDisplay *t, int x, int y, int width, int heig
 	mvprintw(y + 1, x, "Username: %s", this->_user.c_str());
 }
 
+IMonitorModule *WhoModule::clone() const
+{
+	return new WhoModule();
+}
+
 WhoModule & WhoModule::operator=(const WhoModule & src)
 {
 	this->_host = src._host;

@@ -57,10 +57,10 @@ void TerminalDisplay::draw(std::vector<IMonitorModule *> modules) const
 	std::vector<IMonitorModule *>::iterator ite = modules.end();
 	while (it != ite)
 	{
-		draw_box(x, y, 40, 15);
+		draw_box(x, y, 50, 15);
 		(*it)->draw(this, x + 2, y + 1, 36, 13);
-		x += 41;
-		if (x + 40 > this->_width)
+		x += 51;
+		if (x + 50 > this->_width)
 		{
 			x = 0;
 			y += 15;

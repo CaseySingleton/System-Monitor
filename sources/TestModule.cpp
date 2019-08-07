@@ -21,6 +21,11 @@ void TestModule::draw(const TerminalDisplay *t, int x, int y, int width, int hei
 			mvaddch(y + j, x + i, this->c);
 }
 
+IMonitorModule *TestModule::clone() const
+{
+	return new TestModule();
+}
+
 TestModule & TestModule::operator=(const TestModule & src)
 {
 	this->c = src.c;

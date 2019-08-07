@@ -6,7 +6,7 @@
 /*   By: nwhitlow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 01:08:06 by nwhitlow          #+#    #+#             */
-/*   Updated: 2019/07/28 01:24:37 by nwhitlow         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:54:23 by nwhitlow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,17 @@ void NetworkModule::draw(const TerminalDisplay *t, int x, int y, int width, int 
 	mvprintw(y, x, "###### NETWORK ######");
 	mvprintw(y + 1, x, "packets in:      %" PRIu64, n["packetsIn"]);
 	mvprintw(y + 2, x, "packets out:     %" PRIu64, n["packetsOut"]);
-	mvprintw(y + 3, x, "bytes in:        %" PRIu64, n["bytesIn"] / BYTES_IN_GIGABYTE_F);
-	mvprintw(y + 4, x, "bytes out:       %" PRIu64, n["bytesOut"] / BYTES_IN_GIGABYTE_F);
+	mvprintw(y + 3, x, "bytes in:        %.2f GB", n["bytesIn"] / BYTES_IN_GIGABYTE_F);
+	mvprintw(y + 4, x, "bytes out:       %.2f GB", n["bytesOut"] / BYTES_IN_GIGABYTE_F);
 	mvprintw(y + 5, x, "packets in/sec:  %" PRIu64, n["packetsInPerSecond"]);
 	mvprintw(y + 6, x, "packets out/sec: %" PRIu64, n["packetsOutPerSecond"]);
-	mvprintw(y + 7, x, "bytes in/sec:    %" PRIu64, n["bytesInPerSecond"] / BYTES_IN_KILOBYTE_F);
-	mvprintw(y + 8, x, "bytes out/sec:   %" PRIu64, n["bytesOutPerSecond"] / BYTES_IN_KILOBYTE_F);
+	mvprintw(y + 7, x, "bytes in/sec:    %.2f KB", n["bytesInPerSecond"] / BYTES_IN_KILOBYTE_F);
+	mvprintw(y + 8, x, "bytes out/sec:   %.2f KB", n["bytesOutPerSecond"] / BYTES_IN_KILOBYTE_F);
+}
+
+IMonitorModule *NetworkModule::clone() const
+{
+	return new NetworkModule();
 }
 
 NetworkModule & NetworkModule::operator=(const NetworkModule & src)

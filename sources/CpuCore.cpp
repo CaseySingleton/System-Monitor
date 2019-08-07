@@ -6,7 +6,7 @@
 /*   By: csinglet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 21:58:14 by csinglet          #+#    #+#             */
-/*   Updated: 2019/07/26 21:58:15 by csinglet         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:57:09 by nwhitlow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 CpuCore::CpuCore(void) : _coreNumber(0)
 {
-	std::cout << "Hi! I'm CPU core # " << _coreNumber << std::endl;
+//	std::cout << "Hi! I'm CPU core # " << _coreNumber << std::endl;
 	return ;
 }
 
 CpuCore::CpuCore(natural_t coreNumber) : _coreNumber(coreNumber)
 {
-	std::cout << "Hi! I'm CPU core # " << _coreNumber << std::endl;
+//	std::cout << "Hi! I'm CPU core # " << _coreNumber << std::endl;
 	return ;
 }
 
@@ -65,7 +65,7 @@ coreUsage CpuCore::getCoreUsage(void)
 void CpuCore::setCoreNumber(unsigned coreNumber)
 {
 	_coreNumber = coreNumber;
-	std::cout << "Now I'm CPU core # " << _coreNumber << std::endl;
+//	std::cout << "Now I'm CPU core # " << _coreNumber << std::endl;
 }
 
 // Getters

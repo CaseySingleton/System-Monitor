@@ -6,7 +6,7 @@
 /*   By: nwhitlow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 20:53:02 by nwhitlow          #+#    #+#             */
-/*   Updated: 2019/07/28 01:04:02 by nwhitlow         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:54:07 by nwhitlow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ void RamModule::draw(const TerminalDisplay *t, int x, int y, int width, int heig
 	mvprintw(y + 1, x, "used memory:  %" PRIu64, r["used"]);
 	float percent_used = static_cast<float>(r["used"]) / r["total"] * 100.0f;
 	mvprintw(y + 2, x, "percent used: %f", percent_used);
-	mvprintw(y + 3, x, "total memory: %" PRIu64, r["total"]);
+	mvprintw(y + 3, x, "total memory: %.2f", r["total"] / 1073741824.0f);
+}
+
+IMonitorModule *RamModule::clone() const
+{
+	return new RamModule();
 }
 
 RamModule & RamModule::operator=(const RamModule & src)

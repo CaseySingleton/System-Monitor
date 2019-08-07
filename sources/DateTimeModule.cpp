@@ -30,6 +30,11 @@ void DateTimeModule::draw(const TerminalDisplay *t, int x, int y, int width, int
 	}
 }
 
+IMonitorModule *DateTimeModule::clone() const
+{
+	return new DateTimeModule();
+}
+
 DateTimeModule & DateTimeModule::operator=(const DateTimeModule & src)
 {
 	return *this;

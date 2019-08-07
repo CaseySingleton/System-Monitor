@@ -6,14 +6,14 @@
 /*   By: nwhitlow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 21:39:32 by nwhitlow          #+#    #+#             */
-/*   Updated: 2019/07/28 01:05:12 by nwhitlow         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:24:31 by nwhitlow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FrameClock.hpp"
 #include "time_util.hpp"
 
-FrameClock::FrameClock() : _maxFPS(60), _realFPS(0)
+FrameClock::FrameClock() : _maxFPS(30), _realFPS(0)
 {
 	this->_updateInterval = NSEC_IN_SEC / this->_maxFPS;
 	clock_gettime(CLOCK_REALTIME, &(this->_nextUpdateAt));

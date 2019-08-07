@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RamModule.hpp                                      :+:      :+:    :+:   */
+/*   SystemInfoModule.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwhitlow <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/27 20:52:03 by nwhitlow          #+#    #+#             */
-/*   Updated: 2019/07/28 22:55:28 by nwhitlow         ###   ########.fr       */
+/*   Created: 2019/07/28 22:10:34 by nwhitlow          #+#    #+#             */
+/*   Updated: 2019/07/28 22:55:08 by nwhitlow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RAMMODULE_H
-#define RAMMODULE_H
+#ifndef SYSTEMINFOMODULE_H
+#define SYSTEMINFOMODULE_H
 
 #include <curses.h>
-#include <inttypes.h>
 #include "IMonitorModule.hpp"
 #include "TerminalDisplay.hpp"
-#include "Ram.hpp"
+#include "SystemInfo.hpp"
 
-class RamModule : public IMonitorModule
+class SystemInfoModule : public IMonitorModule
 {
 	private:
-	Ram _ram;
-	ramInfo_t _ramInfo;
+	SystemInfo _sys;
+	sysInfo_s _sysInfo;
 
 	public:
-	RamModule();
-	RamModule(const RamModule & src);
-	~RamModule();
+	SystemInfoModule();
+	SystemInfoModule(const SystemInfoModule & src);
+	~SystemInfoModule();
 
 	void update();
 	void draw(const TerminalDisplay *t, int x, int y, int width, int height) const;
 	IMonitorModule *clone() const;
 
-	RamModule & operator=(const RamModule & src);
+	SystemInfoModule & operator=(const SystemInfoModule & src);
 };
 
 #endif

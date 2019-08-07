@@ -6,7 +6,7 @@
 /*   By: csinglet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 23:45:34 by csinglet          #+#    #+#             */
-/*   Updated: 2019/07/27 23:35:20 by csinglet         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:57:31 by nwhitlow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ SystemInfo::SystemInfo(void)
 		else
 			_sysInfo.build = "N/A";
 	}
-	std::cout << _sysInfo.name << std::endl << _sysInfo.version << std::endl << _sysInfo.build << std::endl;
+//	std::cout << _sysInfo.name << std::endl << _sysInfo.version << std::endl << _sysInfo.build << std::endl;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: csinglet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/26 21:35:30 by csinglet          #+#    #+#             */
-/*   Updated: 2019/07/26 21:35:30 by csinglet         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:56:55 by nwhitlow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cpu::Cpu(void) : _numberOfCores(std::thread::hardware_concurrency()), _cpuCores(new CpuCore[_numberOfCores])
 {
-	std::cout << "Number of cores on this machine: " << _numberOfCores << std::endl;
+//	std::cout << "Number of cores on this machine: " << _numberOfCores << std::endl;
 	for (unsigned i = 0; i < _numberOfCores; i++)
 	{
 		_cpuCores[i].setCoreNumber(i);
